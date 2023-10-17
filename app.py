@@ -35,7 +35,7 @@ def main():
         tab1, tab2, tab3 = st.tabs(["Exploratory Data Analysis", "Machine Learning Model", "Data"])
 
         fig_scatter = px.scatter(data_frame = df,
-                            x          = "Fuel Consumption City",
+                            x          = "Energy Consumption ",
                             y          = "CO2 Emissions",
                             color      = "Fuel Type",
                             opacity    = 0.5)
@@ -76,7 +76,7 @@ def main():
                                 max_value  = int(max_cylinders), 
                                 step       = 1)
 
-        fuel_cosumption_city = col2.slider(label     = "Fuel Consumption City",
+        fuel_cosumption_city = col2.slider(label     = "Energy Consumption ",
                                            min_value = float(min_fuel_consumption_city),
                                            max_value = float(max_fuel_consumption_city), 
                                            step      = 0.1)
@@ -100,7 +100,7 @@ def main():
 
         # Scatter Plot - Fuel Consumption
         fig_scatter1 = px.scatter(data_frame = df,
-                                x          = "Fuel Consumption City",
+                                x          = "Energy Consumption ",
                                 y          = "CO2 Emissions",
                                 color      = "Model Year",
                                 opacity    = 0.4,
