@@ -38,7 +38,8 @@ def main():
                             x          = "Fuel Consumption City",
                             y          = "CO2 Emissions",
                             color      = "Fuel Type",
-                            opacity    = 0.5)
+                            opacity    = 0.5,
+                            labels={'Fuel Consumption City': 'Energy Consumption', 'CO2 Emissions': 'CO2 Emissions'})
 
         tab1.plotly_chart(figure_or_data = fig_scatter, use_container_width = True)
 
