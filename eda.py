@@ -30,7 +30,7 @@ def eda_app():
 
     ### Make
     make_options =[f"{k} ({v})" for k, v in df_sidebar["Make"].value_counts().to_dict().items()]
-    make = st.sidebar.multiselect(label   = "Select Make:",
+    make = st.sidebar.multiselect(label   = "Select Machine:",
                                   options =  make_options,
                                   default = make_options[:10])
 
@@ -38,7 +38,7 @@ def eda_app():
     
     ### Vehicle Class
     vehicle_class_options = ["All"] + [f"{k} ({v})" for k, v in df_sidebar["Vehicle Class"].value_counts().to_dict().items()]
-    vehicle_class = st.sidebar.selectbox(label   = "Select Vehicle Class:",
+    vehicle_class = st.sidebar.selectbox(label   = "Select Machine Class:",
                                          options = vehicle_class_options,
                                          index   = 0)
 
