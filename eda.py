@@ -13,7 +13,7 @@ def eda_app():
     st.subheader(body = "Exploratory Data Analysis :chart:")
 
     st.sidebar.markdown("*"*10)
-    st.sidebar.markdown("Select `Year`, `Make` and `Vehicle Class` to explore the data.")
+    st.sidebar.markdown("Select `Year`, `Make` and `Machine Class` to explore the data.")
 
     df = read_data()
 
@@ -58,7 +58,8 @@ def eda_app():
                             color      = "Fuel Type",
                             # size       = "Engine Size",
                             #title      = f"{make} Cars - Year: {model_year}",
-                            opacity    = 0.5)
+                            opacity    = 0.5,
+                            labels={'Fuel Consumption City': 'Energy Consumption', 'CO2 Emissions': 'CO2 Emissions'})
     
     fig_scatter.update_layout()
     
