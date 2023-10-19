@@ -43,7 +43,7 @@ def main():
 
         tab1.plotly_chart(figure_or_data = fig_scatter, use_container_width = True)
 
-        fuel_type = tab2.radio(label      = "Select Fuel Type:",
+        fuel_type = tab2.radio(label      = "Machine Type:",
                                options    = df["Fuel Type"].unique(),
                                index      = 0,
                                disabled   = False,
@@ -77,7 +77,7 @@ def main():
                                 max_value  = int(max_cylinders), 
                                 step       = 1)
 
-        fuel_cosumption_city = col2.slider(label     = "Fuel Consumption City",
+        fuel_cosumption_city = col2.slider(label     = "Enery Consumption",
                                            min_value = float(min_fuel_consumption_city),
                                            max_value = float(max_fuel_consumption_city), 
                                            step      = 0.1)
@@ -110,7 +110,8 @@ def main():
         fig_point1 = px.scatter(data_frame = df_pred,
                                 x          = "Fuel Consumption City",
                                 y          = "CO2 Emissions", )
-        
+        fig_scatter1.update_xaxes(title_text="Energy Consumption")
+        fig_scatter1.update_yaxes(title_text="CO2 Emissions")
         fig_point1.update_traces(marker = {"color" : "red", "size" :10, "symbol" : 21})
         fig_scatter1.add_trace(fig_point1.data[0])
         fig_scatter1.update_layout(xaxis_range = [min_fuel_consumption_city - 1, max_fuel_consumption_city + 1],
